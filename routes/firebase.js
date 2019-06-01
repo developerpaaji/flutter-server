@@ -42,7 +42,7 @@ function saveUser(name, profilePic, id,) {
 }
 function savePost(post){
     return new Promise((resolve,reject)=>{
-        firebase_ref.child('posts').child(Date.now()).set(post,(err)=>{
+        firebase_ref.child('posts').child(post.type).child(Date.now()).set(post,(err)=>{
             if(err!=null){
                 resolve(null);
             }
